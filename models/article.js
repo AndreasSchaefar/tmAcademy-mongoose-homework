@@ -20,6 +20,7 @@ const articleSchema = new Schema({
   createdAt: {
     type: Date,
     required: true,
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
