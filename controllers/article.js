@@ -32,7 +32,7 @@ async function createArticle(req, res) {
 async function getOneArticle(req, res, next) {
   let article;
   try {
-    article = await Article.findById(req.params.articleId);
+    article = await Article.findById(req.params.articleId).populate('owner');
     if (!article) {
       return res.status(404).json({
         message: `Can not find article with id ${req.params.articleId}`,
