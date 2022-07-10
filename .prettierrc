@@ -7,5 +7,5 @@
   "jsxBracketSameLine": true,
   "insertPragma": false,
   "semi": true,
-  "trailingComma": "all"
+  "trailingComma": "es5"
 }

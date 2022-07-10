@@ -1,36 +1,16 @@
-module.exports = {getUser, getUsers, createUser, updateUser};
+module.exports = {createUser, getUser, updateUser, deleteUser};
 
 const User = require('../models/user');
 
-async function createUser(req, res, next) {
+async function createUser(req, res) {
   const user = new User({
     ...req.body,
   });
   try {
     await user.save();
-    res.status(201).json({work: true});
+    res.json(user);
   } catch (e) {
-    res.status(400).json({message: e.message});
-  }
-}
-
-async function updateUser(req, res, next) {
-  try {
-    res.user = Object.assign(res.user, req.body);
-    await res.user.save();
-  } catch (e) {
-    return res.status(500).json({message: e.message});
-  }
-
-  next();
-}
-
-async function getUsers(req, res) {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (e) {
-    res.status(500).json({message: e.message});
+    return res.status(400).json({message: e.message});
   }
 }
 
@@ -48,4 +28,23 @@ async function getUser(req, res, next) {
   }
   res.user = user;
   next();
+}
+
+async function updateUser(req, res) {
+  try {
+    res.user = Object.assign(res.user, req.body);
+    await res.user.save();
+    res.json(res.user);
+  } catch (e) {
+    return res.status(500).json({message: e.message});
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+    await res.user.remove();
+    res.json({work: true});
+  } catch (e) {
+    return res.status(400).json({message: e.message});
+  }
 }

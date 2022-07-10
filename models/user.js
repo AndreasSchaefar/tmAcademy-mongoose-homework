@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const {Schema} = mongoose;
 
 const UserSchema = new Schema({
   firstName: {
@@ -20,7 +20,7 @@ const UserSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: () => Date.now(),
+    default: Date.now,
   },
   numberOfArticles: {
     type: Number,
