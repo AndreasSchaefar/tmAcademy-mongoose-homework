@@ -58,6 +58,7 @@ async function updateUser(req, res) {
 
 async function deleteUser(req, res) {
   try {
+    await Article.deleteMany({owner: res.user._id});
     await res.user.remove();
     res.json({work: true});
   } catch (e) {

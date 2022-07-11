@@ -28,8 +28,8 @@ nickname: type string, not required
 - [x] Using [Postman](https://www.getpostman.com/), and api endpoint **/users (POST)**, I want to create new user document,
       so that I can have possibility to find it in mongodb users collection
 - [x] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (PUT)**, I want to have possibility to edit required user document fields, so that I will have possibility to easily update general user information
-- [ ] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (GET)**, I want to have possibility to get information about any user just by passing specific user mongo id as an api parametr. (Response also should contain all articles that user created)
-- [ ] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (DELETE)**, I want to have possibility to remove specific user from mongodb and all articles that he created.
+- [x] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (GET)**, I want to have possibility to get information about any user just by passing specific user mongo id as an api parametr. (Response also should contain all articles that user created)
+- [x] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (DELETE)**, I want to have possibility to remove specific user from mongodb and all articles that he created.
 - [x] Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId/articles (GET)**, I want to have possibility to get all articles that created by specific user.
 
 2. Implement CRUD for articles
